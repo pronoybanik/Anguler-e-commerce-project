@@ -1,10 +1,3 @@
-<!--
-  Heads up! 👋
-
-  Plugins:
-    - @tailwindcss/forms
--->
-
 <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-lg">
     <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
@@ -17,17 +10,19 @@
     </p>
 
     <form
-      action="#"
+      (ngSubmit)="loginForm()"
       class="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
     >
       <p class="text-center text-lg font-medium">Sign in to your account</p>
 
       <div>
-        <label for="email" class="sr-only">Email</label>
+        <label for="email" class="sr-only">User Name</label>
 
         <div class="relative">
           <input
+            [(ngModel)]="loginInfo.userName"
             type="text"
+            name="userName"
             class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
             placeholder="user Name"
           />
@@ -36,10 +31,11 @@
 
       <div>
         <label for="email" class="sr-only">Email</label>
-
         <div class="relative">
           <input
+            [(ngModel)]="loginInfo.email"
             type="email"
+            name="email"
             class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
             placeholder="Enter email"
           />
@@ -48,10 +44,11 @@
 
       <div>
         <label for="password" class="sr-only">Password</label>
-
         <div class="relative">
           <input
+            [(ngModel)]="loginInfo.password"
             type="password"
+            name="password"
             class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
             placeholder="Enter password"
           />

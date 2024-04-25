@@ -1,0 +1,22 @@
+{
+  "login": [
+    {
+      "id": "274f",
+      "userName": "Add your name in the body",
+      "email": "test@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "311f",
+      "userName": "test 1",
+      "email": "pronoybanik8dsaf2@gmail.com",
+      "password": "1213232"
+    },
+    {
+      "id": "1f0f",
+      "userName": "fds",
+      "email": "fdsaf",
+      "password": "sdfa"
+    }
+  ]
+}
