@@ -1,22 +1,22 @@
 {
-  "login": [
+  "signUp": [
     {
-      "id": "274f",
-      "userName": "Add your name in the body",
-      "email": "test@gmail.com",
-      "password": "1234"
+      "id": "11d8",
+      "name": "pronoy banik",
+      "email": "pronoybanik82@gmail.com",
+      "password": "123456"
     },
     {
-      "id": "311f",
-      "userName": "test 1",
-      "email": "pronoybanik8dsaf2@gmail.com",
-      "password": "1213232"
+      "id": "d3b2",
+      "name": "a",
+      "email": "01609520719",
+      "password": "dsfds"
     },
     {
-      "id": "1f0f",
-      "userName": "fds",
-      "email": "fdsaf",
-      "password": "sdfa"
+      "id": "c0d8",
+      "name": "pronoy banik",
+      "email": "pronoybanik82@gmail.com",
+      "password": "1232"
     }
   ]
 }
