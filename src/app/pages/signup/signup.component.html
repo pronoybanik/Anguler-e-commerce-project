@@ -4,8 +4,8 @@
     class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8"
   >
     <div class="mx-auto max-w-lg">
-      <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
-        Get started today
+      <h1 class="text-center uppercase text-2xl font-bold text-indigo-600 sm:text-3xl">
+        seller Registration
       </h1>
 
       <form
@@ -63,27 +63,25 @@
 
         <p class="text-center text-sm text-gray-500">
           I have a account please-
-          <a (click)="openLogIn()" class="underline cursor-pointer"
-            > Sign in</a
-          >
+          <a (click)="openLogIn()" class="underline cursor-pointer"> Sign in</a>
         </p>
       </form>
     </div>
   </div>
 
-  <!-- login section -->
+  <!--seller login section -->
 
   <div
     *ngIf="showLogin"
     class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8"
   >
     <div class="mx-auto max-w-lg">
-      <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
-        Get started today
+      <h1 class="text-center uppercase text-2xl font-bold text-indigo-600 sm:text-3xl">
+        seller Login 
       </h1>
 
       <form
-        (ngSubmit)="handlerSignUp()"
+        (ngSubmit)="handleLogin()"
         class="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
       >
         <p class="text-center text-lg font-medium">Please Login</p>
@@ -92,7 +90,7 @@
           <label for="email" class="sr-only">Email</label>
           <div class="relative">
             <input
-              [(ngModel)]="signUpInfo.email"
+              [(ngModel)]="logInInfo.email"
               type="email"
               name="email"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
@@ -105,7 +103,7 @@
           <label for="password" class="sr-only">Password</label>
           <div class="relative">
             <input
-              [(ngModel)]="signUpInfo.password"
+              [(ngModel)]="logInInfo.password"
               type="password"
               name="password"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
@@ -125,6 +123,16 @@
           No account please-
           <a (click)="openSignUp()" class="underline cursor-pointer">Sign up</a>
         </p>
+
+        <div
+          *ngIf="authError"
+          role="alert"
+          class="rounded border-s-4 border-red-500 bg-red-50 p-4"
+        >
+          <strong class="block font-medium text-red-800">
+            {{ authError }}
+          </strong>
+        </div>
       </form>
     </div>
   </div>
