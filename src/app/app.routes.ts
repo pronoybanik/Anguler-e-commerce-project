@@ -5,6 +5,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { authGuard } from './auth.guard';
 import { SellerAddProductComponent } from './pages/seller-add-product/seller-add-product.component';
 import { SellerProductListComponent } from './pages/seller-product-list/seller-product-list.component';
+import { SellerUpdateProductComponent } from './pages/seller-update-product/seller-update-product.component';
 
 export const routes: Routes = [
     {
@@ -28,6 +29,11 @@ export const routes: Routes = [
     {
         path: 'seller-productList',
         component: SellerProductListComponent,
+        canActivate: [authGuard]
+    },
+    {
+        path: 'seller-update-productList/:id',
+        component: SellerUpdateProductComponent,
         canActivate: [authGuard]
     },
 ];

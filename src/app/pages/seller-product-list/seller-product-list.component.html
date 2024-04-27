@@ -24,7 +24,10 @@
                 Details
               </th>
               <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                Delate
+                Action
+              </th>
+              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                Update
               </th>
             </tr>
           </thead>
@@ -51,6 +54,12 @@
                 class="cursor-default whitespace-nowrap px-4 py-2 text-gray-700"
               >
                 <button (click)="handleDelete(item.id)">Delete</button>
+              </td>
+              <td
+                routerLink="/seller-update-productList/{{ item.id }}"
+                class="cursor-default whitespace-nowrap px-4 py-2 text-gray-700"
+              >
+                Edit
               </td>
             </tr>
           </tbody>
