@@ -1,1 +1,61 @@
-<p>seller-product-list works!</p>
+<div>
+  <div class="text-center text-2xl font-semibold my-4">
+    <p>productData List</p>
+  </div>
+  <div>
+    <div class="flex items-center justify-center">
+      <div class="overflow-x-auto rounded-lg border border-gray-200">
+        <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+          <thead class="ltr:text-left rtl:text-right">
+            <tr>
+              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                Image
+              </th>
+              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                Name
+              </th>
+              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                Price
+              </th>
+              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                category
+              </th>
+              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                Details
+              </th>
+              <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                Delate
+              </th>
+            </tr>
+          </thead>
+
+          <tbody
+            *ngFor="let item of productData"
+            class="divide-y divide-gray-200"
+          >
+            <tr>
+              <img [src]="item?.image" class="w-20 h-20" alt="" />
+              <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                {{ item?.productName }}
+              </td>
+              <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                {{ item?.price }}
+              </td>
+              <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                {{ item?.category }}
+              </td>
+              <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                {{ item?.description }}
+              </td>
+              <td
+                class="cursor-default whitespace-nowrap px-4 py-2 text-gray-700"
+              >
+                <button (click)="handleDelete(item.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
