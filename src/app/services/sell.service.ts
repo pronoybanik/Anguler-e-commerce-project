@@ -45,8 +45,7 @@ export class SellService {
           localStorage.setItem("seller_auth", JSON.stringify(result.body))
           this.router.navigateByUrl("seller-home")
         } else {
-          console.log("login eroor");
-          this.isLoginError.emit(true)  
+          this.isLoginError.emit(true)
         }
       });
   }

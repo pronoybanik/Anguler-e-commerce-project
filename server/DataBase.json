@@ -24,5 +24,15 @@
       "email": "pronoybanik82@gmail.com",
       "password": "sfdsafd"
     }
+  ],
+  "products": [
+    {
+      "id": "d78d",
+      "category": "b",
+      "description": "d",
+      "image": "c",
+      "price": 1,
+      "productName": "a"
+    }
   ]
 }

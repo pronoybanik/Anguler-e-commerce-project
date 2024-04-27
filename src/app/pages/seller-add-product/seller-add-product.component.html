@@ -1,0 +1,110 @@
+<div class="flex justify-center items-center mt-32">
+  <div>
+    <p class="text-4xl font-bold my-2 text-center">Add New Product</p>
+
+    <form [formGroup]="productForm" (ngSubmit)="addProduct()" class="p-2 w-96">
+      <label
+        for="productName"
+        class="relative mt-2 block overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-blue-600"
+      >
+        <input
+          formControlName="productName"
+          type="text"
+          placeholder="Product Name"
+          name="productName"
+          class="peer h-8 w-full p-2 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+        />
+
+        <span
+          class="absolute start-0 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+        >
+          Product Name
+        </span>
+      </label>
+
+      <label
+        for="price"
+        class="relative mt-2 block overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-blue-600"
+      >
+        <input
+          formControlName="price"
+          type="number"
+          placeholder="Product Name"
+          name="price"
+          class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+        />
+
+        <span
+          class="absolute start-0 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+        >
+          product price
+        </span>
+      </label>
+
+      <label
+        for="category"
+        class="relative mt-2 block overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-blue-600"
+      >
+        <input
+          formControlName="category"
+          type="text"
+          placeholder="category"
+          name="category"
+          class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+        />
+
+        <span
+          class="absolute start-0 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+        >
+          category
+        </span>
+      </label>
+
+      <label
+        for="image"
+        class="relative mt-2 block overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-blue-600"
+      >
+        <input
+          formControlName="image"
+          type="text"
+          placeholder="Image URL"
+          name="imageUrl"
+          class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+        />
+
+        <span
+          class="absolute start-0 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+        >
+          Image URL
+        </span>
+      </label>
+
+      <label
+        for="description"
+        class="relative mt-3 block overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-blue-600"
+      >
+        <textarea
+          formControlName="description"
+          type="text"
+          placeholder="description"
+          name="description"
+          class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+        >
+        </textarea>
+
+        <span
+          class="absolute start-0 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+        >
+          Description
+        </span>
+      </label>
+
+      <button
+        type="submit"
+        class="block w-full mt-4 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+      >
+        Add Product
+      </button>
+    </form>
+  </div>
+</div>
