@@ -22,4 +22,11 @@ export class ProductService {
     console.log("id", id);
     return this.httpClient.delete(`http://localhost:3000/products/${id}`)
   }
+
+  getProductsById(id: string) {
+    return this.httpClient.get<product>("http://localhost:3000/products/" + id);
+  }
+  updateProduct(data: product) {
+    return this.httpClient.put(`http://localhost:3000/products/${data?.id}`, data)
+  }
 }

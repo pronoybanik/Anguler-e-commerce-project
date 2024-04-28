@@ -1,6 +1,6 @@
 <div class="flex justify-center items-center mt-32">
   <div>
-    <p class="text-4xl font-bold my-2 text-center">UP Date Product</p>
+    <p class="text-4xl font-bold my-2 text-center uppercase">update product</p>
 
     <form
       [formGroup]="productForm"
@@ -16,6 +16,7 @@
           type="text"
           placeholder="Product Name"
           name="productName"
+          formControlName="productName"
           class="peer h-8 w-full p-2 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
         />
 
@@ -35,6 +36,7 @@
           type="number"
           placeholder="Product Name"
           name="price"
+          formControlName="price"
           class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
         />
 
@@ -54,6 +56,7 @@
           type="text"
           placeholder="category"
           name="category"
+          formControlName="category"
           class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
         />
 
@@ -73,6 +76,7 @@
           type="text"
           placeholder="Image URL"
           name="imageUrl"
+          formControlName="image"
           class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
         />
         <span
@@ -91,6 +95,7 @@
           type="text"
           placeholder="description"
           name="description"
+          formControlName="description"
           class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
         >
         </textarea>
