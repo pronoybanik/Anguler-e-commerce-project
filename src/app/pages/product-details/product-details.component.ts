@@ -15,16 +15,23 @@ export class ProductDetailsComponent {
   activatedRoute = inject(ActivatedRoute)
   productId = this.activatedRoute.snapshot.params["id"];
   productData: undefined | product;
+  quantityNumber = 1;
 
 
   ngOnInit() {
     this.productId && this.productService.getProductsById(this.productId).subscribe((result) => {
       if (result) {
         this.productData = result;
-        console.log(result);
-
       }
     })
   }
+
+  handleQuantity(value: string) {
+    if (this.quantityNumber < 10 && value === "plus") {
+      this.quantityNumber += 1
+    } else if (this.quantityNumber > 1 && value === "minus") {
+      this.quantityNumber -= 1
+    }
+  };
 
 }
