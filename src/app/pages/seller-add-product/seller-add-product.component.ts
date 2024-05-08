@@ -21,11 +21,18 @@ export class SellerAddProductComponent {
     description: [""],
   })
   addProduct() {
+    // Convert category to lowercase
+    const categoryLowerCase = this.productForm.value.category.toLowerCase();
+
+    // Set the lowercase category back to the form value
+    this.productForm.patchValue({ category: categoryLowerCase });
+
+    // Add the product with the modified category
     this.productService.addProduct(this.productForm.value).subscribe((result) => {
       if (result) {
-        alert("Product Successfully Add")
-        this.router.navigateByUrl("seller-productList")
+        alert('Product Successfully Added');
+        this.router.navigateByUrl('seller-productList');
       }
-    })
+    });
   }
 }

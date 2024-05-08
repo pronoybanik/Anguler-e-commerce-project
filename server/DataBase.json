@@ -30,7 +30,7 @@
       "id": "06a9",
       "productName": "Lenovo IdeaPad 1 15AMN7 ",
       "price": 42000,
-      "category": "Leptop",
+      "category": "laptop",
       "image": "https://www.ryans.com/storage/products/small/lenovo-ideapad-1-15amn7-amd-athlon-silver-7120u-11712138797.webp",
       "description": "Processor Type. - AMD Athlon\nGeneration - Not Applicable\nRAM - 8GB\nStorage - 256GB SSD"
     },
@@ -38,13 +38,13 @@
       "id": "1b53",
       "productName": "Acer Swift Go 14",
       "price": 50000,
-      "category": "Leptop",
+      "category": "laptop",
       "image": "https://www.ryans.com/storage/products/main/acer-swift-go-14-sfg14-41-r5rb-amd-ryzen-5-7530u-11703413753.webp",
       "description": "Processor Type. - Ryzen 5\nGeneration - Not Applicable\nRAM - 8GB\nStorage - 512GB SSD"
     },
     {
       "id": "3d25",
-      "productName": "Huawei Mobile WiFi 3s",
+      "productName": "Huawei mobile WiFi 3s",
       "price": 4050,
       "category": "wifi",
       "image": "https://www.ryans.com/storage/products/main/huawei-mobile-wifi-3s-150-mbps-3g4g-black-pocket-11676694388.webp",
@@ -54,7 +54,7 @@
       "id": "f11a",
       "productName": "iPhone 14 Pro Max",
       "price": 100000,
-      "category": "Mobile",
+      "category": "mobile",
       "image": "https://mcsolution.com.bd/wp-content/uploads/2022/08/iphone-14-pro-max-price-in-bangladesh-2022-MC-Solution-BD-scaled-600x726.webp",
       "description": "Display 6.7 Inches\nProcessor Apple A16 Bionic (5 nm)\nOperating System iOS 16\nStorage 128GB / 256GB /512 GB / 1TB\nPrimary Camera 12 MP"
     },
@@ -65,6 +65,14 @@
       "category": "Printer",
       "image": "https://www.ryans.com/storage/products/main/canon-imageclass-lbp325x-single-function-mono-11610967359.webp",
       "description": "Functions - Print Only\nOutput Color - Black & White\nPrint Speed (Black) - 43ppm(A4), 45ppm(LTR)"
+    },
+    {
+      "id": "f4a3",
+      "productName": "Ajazz AK820 ",
+      "price": 5000,
+      "category": "keyboard",
+      "image": "https://www.startech.com.bd/image/cache/catalog/keyboard/ajazz/ak820/ak820-03-228x228.webp",
+      "description": "81 Keys, Compact Layout\nSouth-Facing LED Orientation & 1.6M RGB Backlighting"
     }
   ]
 }

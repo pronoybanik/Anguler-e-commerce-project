@@ -29,4 +29,7 @@ export class ProductService {
   updateProduct(data: product) {
     return this.httpClient.put(`http://localhost:3000/products/${data?.id}`, data)
   }
+  searchProduct(query: string) {
+    return this.httpClient.get(`http://localhost:3000/products?category=${query}`)
+  }
 }

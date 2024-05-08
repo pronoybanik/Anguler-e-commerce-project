@@ -1,0 +1,35 @@
+<section class="p-4">
+  <div>
+    <p class="uppercase text-center text-5xl my-6 font-semibold">
+      Our Products
+    </p>
+  </div>
+  <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-8 gap-4">
+    <article
+      *ngFor="let item of searchData"
+      class="overflow-hidden rounded-lg shadow transition hover:shadow-lg"
+    >
+      <img alt="" [src]="item?.image" class="h-56 w-full object-contain" />
+
+      <div class="bg-white p-4 sm:p-6">
+        <h1>
+          <h2 class="mt-0.5 text-lg text-gray-900">name</h2>
+        </h1>
+
+        <p class="block text-sm font-bold text-gray-500">Tk</p>
+
+        <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+          dscription
+        </p>
+
+        <div class="flex items-end justify-center mt-4 cursor-pointer">
+          <a
+            class="inline-block rounded border border-black px-4 py-2 text-xs font-medium text-black hover:bg-black hover:text-white focus:outline-none focus:ring active:bg-black"
+          >
+            Add to Card
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
