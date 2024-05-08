@@ -1,0 +1,80 @@
+<section>
+  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+      <div class="relative h-64 overflow-hidden sm:h-80 lg:h-full">
+        <img
+          alt=""
+          [src]="productData?.image"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+
+      <div class="lg:py-16">
+        <article class="space-y-4 text-gray-600">
+          <div class="max-w-3xl">
+            <h2 class="text-3xl font-bold sm:text-4xl">
+              {{ productData?.productName }}
+            </h2>
+          </div>
+          <p class="text-xl font-semibold">
+            Price: {{ productData?.price }} TK
+          </p>
+          <h1 class="flex gap-2 text-xl font-semibold">
+            Category:
+            <h2 class="uppercase">{{ productData?.category }}</h2>
+          </h1>
+
+          <p>
+            {{ productData?.description }}
+          </p>
+
+          <div class="flex gap-4">
+            <div class="mt-4 cursor-pointer">
+              <button
+                class="inline-block rounded border border-black px-4 py-2 text-xs font-medium text-black hover:bg-black hover:text-white focus:outline-none focus:ring active:bg-black"
+              >
+                Add to Card
+              </button>
+            </div>
+            <div class="mt-4 cursor-pointer">
+              <button
+                class="inline-block rounded border border-black px-4 py-2 text-xs font-medium text-black hover:bg-black hover:text-white focus:outline-none focus:ring active:bg-black"
+              >
+                Bye Now
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div class="w-40">
+              <label for="Quantity" class="sr-only"> Quantity </label>
+
+              <div class="flex items-center rounded border border-black">
+                <button
+                  type="button"
+                  class="size-10 font-bold leading-10 text-gray-600 transition hover:opacity-75"
+                >
+                  &minus;
+                </button>
+
+                <input
+                  type="number"
+                  id="Quantity"
+                  value="1"
+                  class="h-10 w-16 font-bold border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+                />
+
+                <button
+                  type="button"
+                  class="size-10 leading-10 font-bold text-gray-600 transition hover:opacity-75"
+                >
+                  &plus;
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

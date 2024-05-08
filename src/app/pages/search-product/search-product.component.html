@@ -9,7 +9,9 @@
       *ngFor="let item of searchData"
       class="overflow-hidden rounded-lg shadow transition hover:shadow-lg"
     >
-      <img alt="" [src]="item?.image" class="h-56 w-full object-contain" />
+      <a routerLink="/productDetails/{{ item.id }}">
+        <img alt="" [src]="item?.image" class="h-56 w-full object-contain" />
+      </a>
 
       <div class="bg-white p-4 sm:p-6">
         <h1>

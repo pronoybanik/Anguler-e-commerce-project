@@ -5,9 +5,10 @@
     </p>
   </div>
   <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-8 gap-4">
-    <article
+    <a
       *ngFor="let item of productData"
       class="overflow-hidden rounded-lg shadow transition hover:shadow-lg"
+      routerLink="/productDetails/{{ item.id }}"
     >
       <img alt="" [src]="item?.image" class="h-56 w-full object-contain" />
 
@@ -34,6 +35,6 @@
           </a>
         </div>
       </div>
-    </article>
+    </a>
   </div>
 </section>

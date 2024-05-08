@@ -7,6 +7,7 @@ import { SellerAddProductComponent } from './pages/seller-add-product/seller-add
 import { SellerProductListComponent } from './pages/seller-product-list/seller-product-list.component';
 import { SellerUpdateProductComponent } from './pages/seller-update-product/seller-update-product.component';
 import { SearchProductComponent } from './pages/search-product/search-product.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 export const routes: Routes = [
     {
@@ -40,6 +41,11 @@ export const routes: Routes = [
     {
         path: 'search-product/:query',
         component: SearchProductComponent,
+        canActivate: [authGuard]
+    },
+    {
+        path: 'productDetails/:id',
+        component: ProductDetailsComponent,
         canActivate: [authGuard]
     },
 ];

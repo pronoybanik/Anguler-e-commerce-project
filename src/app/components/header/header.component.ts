@@ -47,7 +47,4 @@ export class HeaderComponent {
       console.log("There is no value");
     }
   }
-
-
-
 }
