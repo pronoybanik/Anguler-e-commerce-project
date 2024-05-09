@@ -94,5 +94,18 @@
       "email": "admin@gmail.com",
       "password": "dasfs"
     }
+  ],
+  "cart": [
+    {
+      "id": "943a",
+      "productName": "Lenovo IdeaPad 1 15AMN7 ",
+      "price": 42000,
+      "category": "laptop",
+      "image": "https://www.ryans.com/storage/products/small/lenovo-ideapad-1-15amn7-amd-athlon-silver-7120u-11712138797.webp",
+      "description": "Processor Type. - AMD Athlon\nGeneration - Not Applicable\nRAM - 8GB\nStorage - 256GB SSD",
+      "quantity": 1,
+      "userId": "33c0",
+      "productId": "06a9"
+    }
   ]
 }

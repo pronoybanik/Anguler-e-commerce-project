@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { product } from '../../Data-Type/data-type';
+import { cart, product } from '../../Data-Type/data-type';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -52,6 +52,21 @@ export class ProductDetailsComponent {
       if (!localStorage.getItem("user_auth")) {
         this.productService.localStorageData(this.productData);
         this.removeCart = true
+      } else {
+        console.log("user is login");
+        let user = localStorage.getItem("user_auth")
+        let userId = user && JSON.parse(user).id
+        let cartData: cart = {
+          ...this.productData,
+          userId,
+          productId: this.productData.id
+        }
+        delete cartData.id;
+        this.productService.addToCart(cartData).subscribe((result) => {
+          if (result) {
+            alert("Product is added in Cart")
+          }
+        })
       }
     }
   }
