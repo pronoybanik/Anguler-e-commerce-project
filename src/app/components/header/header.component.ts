@@ -12,6 +12,7 @@ export class HeaderComponent {
   menuType: String = "default";
   router = inject(Router)
   sellName: string = "";
+  userName: string = "";
   searchValue: string = ""
 
   ngOnInit() {
@@ -23,8 +24,13 @@ export class HeaderComponent {
           let sellerData = sellerStore && JSON.parse(sellerStore)[0];
           this.sellName = sellerData.name;
 
+        } else if (localStorage.getItem("user_auth")) {
+          this.menuType = "user"
+          let userStore = localStorage.getItem('user_auth');
+          let userData = userStore && JSON.parse(userStore);
+          this.userName = userData.userName;
         } else {
-          this.menuType = "default"
+          this.menuType = "default";
         }
       }
     })
@@ -32,6 +38,7 @@ export class HeaderComponent {
 
   handleLogOut() {
     localStorage.removeItem("seller_auth")
+    localStorage.removeItem("user_auth")
     this.router.navigateByUrl('')
   }
 

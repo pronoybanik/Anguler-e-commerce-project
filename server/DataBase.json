@@ -74,5 +74,25 @@
       "image": "https://www.startech.com.bd/image/cache/catalog/keyboard/ajazz/ak820/ak820-03-228x228.webp",
       "description": "81 Keys, Compact Layout\nSouth-Facing LED Orientation & 1.6M RGB Backlighting"
     }
+  ],
+  "user": [
+    {
+      "id": "33c0",
+      "userName": "pronoy banik",
+      "email": "pronoybanik82@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "e687",
+      "userName": "pronoy ",
+      "email": "pronoybanik@gmail.com",
+      "password": "123123"
+    },
+    {
+      "id": "3dc4",
+      "userName": "pronoy banik",
+      "email": "admin@gmail.com",
+      "password": "dasfs"
+    }
   ]
 }

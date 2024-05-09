@@ -1,55 +1,139 @@
 <section class="mx-auto max-w-lg">
-  <p class="text-center text-3xl font-semibold mt-8 uppercase">user sign up</p>
-  <form
-    class="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
-    #userSignUp="ngForm"
-    (ngSubmit)="signUp(userSignUp.value)"
-  >
-    <div>
-      <label for="email" class="sr-only">User Name</label>
-
-      <div class="relative">
-        <input
-          type="text"
-          name="userName"
-          class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-          placeholder="user Name"
-          ngModel
-        />
-      </div>
-    </div>
-
-    <div>
-      <label for="email" class="sr-only">Email</label>
-      <div class="relative">
-        <input
-          type="email"
-          name="email"
-          class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-          placeholder="Enter email"
-          ngModel
-        />
-      </div>
-    </div>
-
-    <div>
-      <label for="password" class="sr-only">Password</label>
-      <div class="relative">
-        <input
-          type="password"
-          name="password"
-          class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-          placeholder="Enter password"
-          ngModel
-        />
-      </div>
-    </div>
-
-    <button
-      type="submit"
-      class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+  <div *ngIf="!showLogIn">
+    <p class="text-center text-3xl font-semibold mt-8 uppercase">
+      user sign up
+    </p>
+    <form
+      class="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+      #userSignUp="ngForm"
+      (ngSubmit)="signUp(userSignUp.value)"
     >
-      Sign up
-    </button>
-  </form>
+      <div>
+        <label for="email" class="sr-only">User Name</label>
+
+        <div class="relative">
+          <input
+            type="text"
+            name="userName"
+            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="user Name"
+            ngModel
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="email" class="sr-only">Email</label>
+        <div class="relative">
+          <input
+            type="email"
+            name="email"
+            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter email"
+            ngModel
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="sr-only">Password</label>
+        <div class="relative">
+          <input
+            type="password"
+            name="password"
+            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter password"
+            ngModel
+          />
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+      >
+        Sign up
+      </button>
+
+      <p class="text-center text-sm text-gray-500">
+        I have a account please-
+        <a (click)="openSignUp()" class="underline cursor-pointer"> LogIn</a>
+      </p>
+    </form>
+  </div>
+
+  <div *ngIf="showLogIn">
+    <p class="text-center text-3xl font-semibold mt-8 uppercase">user Login</p>
+    <form
+      class="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+      #userLogin="ngForm"
+      (ngSubmit)="login(userLogin.value)"
+    >
+      <div>
+        <label for="email" class="sr-only">Email</label>
+        <div class="relative">
+          <input
+            type="email"
+            name="email"
+            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter email"
+            ngModel
+            required
+            #email="ngModel"
+            email
+          />
+        </div>
+        <p class="text-center mt-2 text-red-500 font-semibold">
+          <span *ngIf="email.invalid && email.touched"
+            >Please Enter a valid Email</span
+          >
+        </p>
+      </div>
+
+      <div>
+        <label for="password" class="sr-only">Password</label>
+        <div class="relative">
+          <input
+            type="password"
+            name="password"
+            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter password"
+            ngModel
+            required
+            minlength="4"
+            maxlength="10"
+            #password="ngModel"
+          />
+        </div>
+        <p class="text-center text-red-500 font-semibold">
+          <span *ngIf="password.invalid && password.touched"
+            >Please Enter a valid Password</span
+          >
+        </p>
+      </div>
+
+      <button
+        [disabled]="userLogin.invalid"
+        type="submit"
+        class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+      >
+        Login
+      </button>
+
+      <p class="text-center text-sm text-gray-500">
+        Create a Account -
+        <a (click)="openLogIn()" class="underline cursor-pointer"> Sign up</a>
+      </p>
+
+      <div
+        *ngIf="authError"
+        role="alert"
+        class="rounded border-s-4 border-red-500 bg-red-50 p-4"
+      >
+        <strong class="block font-medium text-red-800">
+          {{ authError }}
+        </strong>
+      </div>
+    </form>
+  </div>
 </section>

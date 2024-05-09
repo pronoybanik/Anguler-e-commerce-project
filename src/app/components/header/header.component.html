@@ -36,6 +36,41 @@
               </a>
             </li>
           </ul>
+
+          <ul *ngSwitchCase="'user'" class="flex items-center gap-6 text-sm">
+            <li>
+              <a
+                class="text-gray-700 text-md transition cursor-pointer hover:text-gray-500/75"
+                routerLink=""
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-gray-700 cursor-pointer transition hover:text-gray-500/75"
+                routerLink="signUp"
+              >
+                seller
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-gray-700 cursor-pointer transition hover:text-gray-500/75"
+                (click)="handleLogOut()"
+              >
+                LogOut
+              </a>
+            </li>
+            <li>
+              <p
+                class="text-gray-700 font-bold text-lg cursor-pointer transition hover:text-gray-500/75"
+              >
+                {{ userName | titlecase }}
+              </p>
+            </li>
+          </ul>
+
           <ul *ngSwitchCase="'seller'" class="flex items-center gap-6 text-sm">
             <li>
               <a
@@ -61,12 +96,11 @@
                 LogOut
               </a>
             </li>
-
             <li>
               <p
-                class="text-gray-700 cursor-pointer transition hover:text-gray-500/75"
+                class="text-gray-700 font-bold text-lg cursor-pointer transition hover:text-gray-500/75"
               >
-                {{ sellName }}
+                {{ sellName | titlecase }}
               </p>
             </li>
           </ul>
