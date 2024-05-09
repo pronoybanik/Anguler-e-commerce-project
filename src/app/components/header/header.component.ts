@@ -49,9 +49,10 @@ export class HeaderComponent {
   }
 
   handleLogOut() {
-    localStorage.removeItem("seller_auth")
-    localStorage.removeItem("user_auth")
-    this.router.navigateByUrl('')
+    localStorage.removeItem("seller_auth");
+    localStorage.removeItem("user_auth");
+    this.router.navigateByUrl('');
+    this.productService.cartIndex.emit([])
   }
 
   inputChange(event: any) {
@@ -62,6 +63,6 @@ export class HeaderComponent {
     if (this.searchValue.length) {
       const url: string = `search-product/${this.searchValue.toLowerCase()}`;
       this.router.navigateByUrl(url)
-    } 
+    }
   }
 }

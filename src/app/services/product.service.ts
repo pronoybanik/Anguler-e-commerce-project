@@ -41,12 +41,13 @@ export class ProductService {
     let localCart = localStorage.getItem("productData")
     if (!localCart) {
       localStorage.setItem("productData", JSON.stringify([data]))
+      this.cartIndex.emit([data])
     } else {
       cartData = JSON.parse(localCart)
       cartData.push(data)
       localStorage.setItem("productData", JSON.stringify(cartData))
+      this.cartIndex.emit(cartData)
     }
-    this.cartIndex.emit(cartData)
   };
 
   removeItemFormCart(id: string) {
@@ -61,6 +62,14 @@ export class ProductService {
 
   addToCart(cartData: cart) {
     return this.httpClient.post('http://localhost:3000/cart', cartData);
+  }
+
+  getCartProduct(userId: string) {
+    return this.httpClient.get<product[]>('http://localhost:3000/cart?userId=' + userId, { observe: "response" }).subscribe((result) => {
+      if (result && result.body) {
+        this.cartIndex.emit(result.body)
+      }
+    })
   }
 
 }

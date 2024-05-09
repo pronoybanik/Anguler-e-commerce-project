@@ -33,7 +33,19 @@ export class ProductDetailsComponent {
           } else {
             this.removeCart = false
           }
+        }
+        let user = localStorage.getItem("user_auth")
+        if (user) {
+          let userId = user && JSON.parse(user).id;
+          this.productService.getCartProduct(userId);
+          this.productService.cartIndex.subscribe((result) => {
+            let item = result.filter((item: product) => this.productId === item?.productId)
+            console.log("item number", item);
+            if (item.length) {
+              this.removeCart = true;
+            }
 
+          })
         }
       }
     })
@@ -64,7 +76,8 @@ export class ProductDetailsComponent {
         delete cartData.id;
         this.productService.addToCart(cartData).subscribe((result) => {
           if (result) {
-            alert("Product is added in Cart")
+            this.productService.getCartProduct(userId)
+            this.removeCart = true;
           }
         })
       }

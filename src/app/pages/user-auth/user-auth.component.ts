@@ -51,7 +51,7 @@ export class UserAuthComponent {
       if (data) {
         let cartDataList: product[] = JSON.parse(data)
         let userId = this.userService.userId
-        
+
         cartDataList.forEach((product: product, index) => {
           let cartData: cart = {
             ...product,
@@ -70,7 +70,11 @@ export class UserAuthComponent {
           })
         })
       }
+      
+      this.productService.getCartProduct(this.userService.userId)
     }, 2000);
+
+   
   }
 
 }
