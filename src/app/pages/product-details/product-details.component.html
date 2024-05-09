@@ -31,9 +31,18 @@
           <div class="flex gap-4">
             <div class="mt-4 cursor-pointer">
               <button
+                *ngIf="!removeCart"
+                (click)="AddProduct()"
                 class="inline-block rounded border border-black px-4 py-2 text-xs font-medium text-black hover:bg-black hover:text-white focus:outline-none focus:ring active:bg-black"
               >
-                Add to Card
+                Add to Cart
+              </button>
+              <button
+                *ngIf="removeCart"
+                class="inline-block rounded border border-black px-4 py-2 text-xs font-medium text-black hover:bg-black hover:text-white focus:outline-none focus:ring active:bg-black"
+                (click)="removeToCart()"
+              >
+                remove Cart
               </button>
             </div>
             <div class="mt-4 cursor-pointer">
@@ -61,7 +70,7 @@
                 <input
                   type="number"
                   id="Quantity"
-                  value={{quantityNumber}}
+                  value="{{ quantityNumber }}"
                   class="h-10 w-16 font-bold border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                 />
 

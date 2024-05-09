@@ -14,7 +14,8 @@ export interface product {
     price: number,
     category: string,
     image: string,
-    description: string
+    description: string,
+    quantity: undefined | number,
 }
 
 

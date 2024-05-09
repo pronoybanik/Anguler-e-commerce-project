@@ -35,6 +35,15 @@
                 Login / signUp
               </a>
             </li>
+
+            <li>
+              <a
+                class="text-gray-700 text-md transition cursor-pointer hover:text-gray-500/75"
+                routerLink=""
+              >
+                cart({{ cartItem }})
+              </a>
+            </li>
           </ul>
 
           <ul *ngSwitchCase="'user'" class="flex items-center gap-6 text-sm">
@@ -68,6 +77,14 @@
               >
                 {{ userName | titlecase }}
               </p>
+            </li>
+
+            <li>
+              <a
+                class="text-gray-700 text-md transition cursor-pointer hover:text-gray-500/75"
+              >
+                cart({{ cartItem }})
+              </a>
             </li>
           </ul>
 
@@ -103,6 +120,8 @@
                 {{ sellName | titlecase }}
               </p>
             </li>
+
+            
           </ul>
         </nav>
       </div>
