@@ -86,7 +86,7 @@
       "id": "e687",
       "userName": "pronoy ",
       "email": "pronoybanik@gmail.com",
-      "password": "123123"
+      "password": "112233"
     },
     {
       "id": "3dc4",
@@ -97,15 +97,15 @@
   ],
   "cart": [
     {
-      "id": "943a",
-      "productName": "Lenovo IdeaPad 1 15AMN7 ",
-      "price": 42000,
-      "category": "laptop",
-      "image": "https://www.ryans.com/storage/products/small/lenovo-ideapad-1-15amn7-amd-athlon-silver-7120u-11712138797.webp",
-      "description": "Processor Type. - AMD Athlon\nGeneration - Not Applicable\nRAM - 8GB\nStorage - 256GB SSD",
-      "quantity": 1,
-      "userId": "33c0",
-      "productId": "06a9"
+      "id": "b63b",
+      "productName": "Huawei mobile WiFi 3s",
+      "price": 4050,
+      "category": "wifi",
+      "image": "https://www.ryans.com/storage/products/main/huawei-mobile-wifi-3s-150-mbps-3g4g-black-pocket-11676694388.webp",
+      "description": "Antenna (Type & Qty) - LTE/UMTS main and diversity antennas\nRouter Type - Portable\nBand - Single",
+      "quantity": 4,
+      "productId": "3d25",
+      "userId": "3dc4"
     }
   ]
 }

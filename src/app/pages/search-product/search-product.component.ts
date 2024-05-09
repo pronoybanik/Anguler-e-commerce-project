@@ -19,7 +19,6 @@ export class SearchProductComponent {
   router = inject(Router);
 
   ngOnInit() {
-    console.log(this.productQuery);
     this.productService.searchProduct(this.productQuery.toLowerCase()).subscribe((data: any) => {
       if (data.length) {
         this.searchData = data as [];

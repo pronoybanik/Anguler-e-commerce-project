@@ -33,6 +33,7 @@ export class ProductDetailsComponent {
           } else {
             this.removeCart = false
           }
+
         }
       }
     })
@@ -53,7 +54,6 @@ export class ProductDetailsComponent {
         this.productService.localStorageData(this.productData);
         this.removeCart = true
       } else {
-        console.log("user is login");
         let user = localStorage.getItem("user_auth")
         let userId = user && JSON.parse(user).id
         let cartData: cart = {
@@ -69,10 +69,11 @@ export class ProductDetailsComponent {
         })
       }
     }
-  }
+  };
 
   removeToCart() {
     this.productService.removeItemFormCart(this.productId)
     this.removeCart = false
-  }
+  };
+
 }

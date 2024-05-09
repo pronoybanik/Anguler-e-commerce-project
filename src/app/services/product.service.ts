@@ -7,7 +7,7 @@ import { cart, product } from '../Data-Type/data-type';
 })
 export class ProductService {
   httpClient = inject(HttpClient);
-  cartData = new EventEmitter<product[] | []>();
+  cartIndex = new EventEmitter<product[] | []>();
 
   constructor() { }
 
@@ -21,7 +21,6 @@ export class ProductService {
   };
 
   deleteProduct(id: string) {
-    console.log("id", id);
     return this.httpClient.delete(`http://localhost:3000/products/${id}`)
   };
 
@@ -47,7 +46,7 @@ export class ProductService {
       cartData.push(data)
       localStorage.setItem("productData", JSON.stringify(cartData))
     }
-    this.cartData.emit(cartData)
+    this.cartIndex.emit(cartData)
   };
 
   removeItemFormCart(id: string) {
@@ -56,7 +55,7 @@ export class ProductService {
       let items: product[] = JSON.parse(cartData);
       items = items.filter((item: product) => id !== item.id);
       localStorage.setItem("productData", JSON.stringify(items));
-      this.cartData.emit(items)
+      this.cartIndex.emit(items)
     }
   };
 

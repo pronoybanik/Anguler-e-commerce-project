@@ -43,7 +43,7 @@ export class HeaderComponent {
       this.cartItem = JSON.parse(localData).length
     }
     // set a live counting system for navbar cart
-    this.productService.cartData.subscribe((item) => {
+    this.productService.cartIndex.subscribe((item) => {
       this.cartItem = item.length;
     })
   }
@@ -62,8 +62,6 @@ export class HeaderComponent {
     if (this.searchValue.length) {
       const url: string = `search-product/${this.searchValue.toLowerCase()}`;
       this.router.navigateByUrl(url)
-    } else {
-      console.log("There is no value");
-    }
+    } 
   }
 }
