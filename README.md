@@ -33,4 +33,5 @@ Backend Json server command:
 npx json-server DataBase.json
 
 Anguler componet create: ng g c (file Name);
+
 Anguler service create:  ng g s (file Name);
