@@ -9,6 +9,7 @@ import { SellerUpdateProductComponent } from './pages/seller-update-product/sell
 import { SearchProductComponent } from './pages/search-product/search-product.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { UserAuthComponent } from './pages/user-auth/user-auth.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 export const routes: Routes = [
     {
@@ -50,5 +51,9 @@ export const routes: Routes = [
     {
         path: 'user-auth',
         component: UserAuthComponent,
+    },
+    {
+        path: 'cart-page',
+        component: CartPageComponent,
     },
 ];

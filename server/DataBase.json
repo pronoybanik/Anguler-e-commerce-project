@@ -141,15 +141,15 @@
       "productId": "3d25"
     },
     {
-      "id": "3028",
-      "productName": "Huawei mobile WiFi 3s",
-      "price": 4050,
-      "category": "wifi",
-      "image": "https://www.ryans.com/storage/products/main/huawei-mobile-wifi-3s-150-mbps-3g4g-black-pocket-11676694388.webp",
-      "description": "Antenna (Type & Qty) - LTE/UMTS main and diversity antennas\nRouter Type - Portable\nBand - Single",
-      "quantity": 1,
+      "id": "692c",
+      "productName": "Ajazz AK820 ",
+      "price": 5000,
+      "category": "keyboard",
+      "image": "https://www.startech.com.bd/image/cache/catalog/keyboard/ajazz/ak820/ak820-03-228x228.webp",
+      "description": "81 Keys, Compact Layout\nSouth-Facing LED Orientation & 1.6M RGB Backlighting",
+      "quantity": 4,
       "userId": "33c0",
-      "productId": "3d25"
+      "productId": "f4a3"
     }
   ]
 }

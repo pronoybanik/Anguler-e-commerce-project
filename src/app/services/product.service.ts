@@ -62,7 +62,7 @@ export class ProductService {
 
   addToCart(cartData: cart) {
     return this.httpClient.post('http://localhost:3000/cart', cartData);
-  }
+  };
 
   getCarList(userId: string) {
     return this.httpClient.get<product[]>('http://localhost:3000/cart?userId=' + userId, { observe: "response" }).subscribe((result) => {
@@ -70,10 +70,16 @@ export class ProductService {
         this.cartIndex.emit(result.body)
       }
     })
-  }
+  };
 
   removeToCart(id: string) {
     return this.httpClient.delete("http://localhost:3000/cart/" + id)
-  }
+  };
 
+  currentCart() {
+    let userStore = localStorage.getItem('user_auth');
+    let userData = userStore && JSON.parse(userStore);
+
+    return this.httpClient.get<cart[]>("http://localhost:3000/cart?userId=" + userData?.id)
+  }
 }

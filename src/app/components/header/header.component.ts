@@ -26,7 +26,6 @@ export class HeaderComponent {
           let sellerStore = localStorage.getItem('seller_auth');
           let sellerData = sellerStore && JSON.parse(sellerStore)[0];
           this.sellName = sellerData.name;
-
         } else if (localStorage.getItem("user_auth")) {
           this.menuType = "user"
           let userStore = localStorage.getItem('user_auth');
