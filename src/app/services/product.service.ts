@@ -64,12 +64,16 @@ export class ProductService {
     return this.httpClient.post('http://localhost:3000/cart', cartData);
   }
 
-  getCartProduct(userId: string) {
+  getCarList(userId: string) {
     return this.httpClient.get<product[]>('http://localhost:3000/cart?userId=' + userId, { observe: "response" }).subscribe((result) => {
       if (result && result.body) {
         this.cartIndex.emit(result.body)
       }
     })
+  }
+
+  removeToCart(id: string) {
+    return this.httpClient.delete("http://localhost:3000/cart/" + id)
   }
 
 }

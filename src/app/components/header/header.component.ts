@@ -32,6 +32,7 @@ export class HeaderComponent {
           let userStore = localStorage.getItem('user_auth');
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData.userName;
+          this.productService.getCarList(userData.id)
         } else {
           this.menuType = "default";
         }

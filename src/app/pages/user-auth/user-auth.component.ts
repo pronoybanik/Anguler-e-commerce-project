@@ -71,7 +71,7 @@ export class UserAuthComponent {
         })
       }
       
-      this.productService.getCartProduct(this.userService.userId)
+      this.productService.getCarList(this.userService.userId)
     }, 2000);
 
    

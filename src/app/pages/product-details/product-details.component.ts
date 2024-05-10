@@ -18,6 +18,7 @@ export class ProductDetailsComponent {
   productData: undefined | product;
   quantityNumber = 1;
   removeCart = false;
+  cartData: product | undefined;
 
   ngOnInit() {
     this.productId && this.productService.getProductsById(this.productId).subscribe((result) => {
@@ -37,11 +38,12 @@ export class ProductDetailsComponent {
         let user = localStorage.getItem("user_auth")
         if (user) {
           let userId = user && JSON.parse(user).id;
-          this.productService.getCartProduct(userId);
+          this.productService.getCarList(userId);
           this.productService.cartIndex.subscribe((result) => {
             let item = result.filter((item: product) => this.productId === item?.productId)
             console.log("item number", item);
             if (item.length) {
+              this.cartData = item[0]
               this.removeCart = true;
             }
 
@@ -76,7 +78,7 @@ export class ProductDetailsComponent {
         delete cartData.id;
         this.productService.addToCart(cartData).subscribe((result) => {
           if (result) {
-            this.productService.getCartProduct(userId)
+            this.productService.getCarList(userId)
             this.removeCart = true;
           }
         })
@@ -85,7 +87,18 @@ export class ProductDetailsComponent {
   };
 
   removeToCart() {
-    this.productService.removeItemFormCart(this.productId)
+    if (!localStorage.getItem("user_auth")) {
+      this.productService.removeItemFormCart(this.productId);
+    } else {
+      console.log(this.cartData);
+      let user = localStorage.getItem("user_auth")
+      let userId = user && JSON.parse(user).id
+      this.cartData && this.productService.removeToCart(this.cartData.id).subscribe((result) => {
+        if (result) {
+          this.productService.getCarList(userId)
+        }
+      })
+    }
     this.removeCart = false
   };
 
