@@ -10,6 +10,7 @@ import { SearchProductComponent } from './pages/search-product/search-product.co
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { UserAuthComponent } from './pages/user-auth/user-auth.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +56,9 @@ export const routes: Routes = [
     {
         path: 'cart-page',
         component: CartPageComponent,
+    },
+    {
+        path: 'checkout',
+        component: CheckoutPageComponent,
     },
 ];

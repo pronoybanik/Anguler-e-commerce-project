@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { cart, priceSummary } from '../../Data-Type/data-type';
 import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, RouterLink],
   templateUrl: './cart-page.component.html'
 })
 export class CartPageComponent {
@@ -34,10 +35,6 @@ export class CartPageComponent {
         this.priceSummary.tax = price / 5;
         this.priceSummary.delivery = 100;
         this.priceSummary.total = this.priceSummary.price - this.priceSummary.discount + this.priceSummary.tax + this.priceSummary.delivery;
-        
-        console.log(this.priceSummary);
-
-
       }
     })
   }
