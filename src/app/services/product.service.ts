@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, inject } from '@angular/core';
-import { cart, product } from '../Data-Type/data-type';
+import { cart, order, product } from '../Data-Type/data-type';
 
 @Injectable({
   providedIn: 'root'
@@ -79,7 +79,30 @@ export class ProductService {
   currentCart() {
     let userStore = localStorage.getItem('user_auth');
     let userData = userStore && JSON.parse(userStore);
-
     return this.httpClient.get<cart[]>("http://localhost:3000/cart?userId=" + userData?.id)
+  }
+
+  orderSave(data: order) {
+    return this.httpClient.post("http://localhost:3000/orders", data)
+  }
+
+  orderList() {
+    let userStore = localStorage.getItem('user_auth');
+    let userData = userStore && JSON.parse(userStore);
+    return this.httpClient.get<order[]>(`http://localhost:3000/orders?userId=${userData?.id}`)
+  }
+
+  deleteCartItem(cartId: string) {
+    return this.httpClient.delete("http://localhost:3000/cart/" + cartId, {
+      observe: "response"
+    }).subscribe((result) => {
+      if (result) {
+        this.cartIndex.emit([])
+      }
+    })
+  };
+
+  cancelOrder(id: string) {
+    return this.httpClient.delete("http://localhost:3000/orders/" + id)
   }
 }

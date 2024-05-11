@@ -1,19 +1,33 @@
-<section>
+<section class="mt-10">
   <div>
-    <p class="text-center text-3xl uppercase">checkout</p>
+    <p class="text-center text-4xl uppercase font-bold">checkout Form</p>
   </div>
 
   <section>
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div>
+        <p class="text-center text-2xl font-semibold">Add Shipping Address</p>
+      </div>
+
+      <p class="text-center text-xl text-green-600 font-bold mt-2">
+        {{ orderMessage }}
+      </p>
+
       <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-        <form action="#" class="space-y-4">
+        <form
+          #orderData="ngForm"
+          class="space-y-4"
+          (ngSubmit)="orderHandle(orderData.value)"
+        >
           <div>
             <label class="sr-only" for="name">Name</label>
             <input
               class="w-full rounded-lg border-gray-200 border-2 p-3 text-sm"
               placeholder="Name"
               type="text"
+              name="name"
               id="name"
+              ngModel
             />
           </div>
 
@@ -24,7 +38,9 @@
                 class="w-full rounded-lg border-gray-200 border-2 p-3 text-sm"
                 placeholder="Email address"
                 type="email"
+                name="email"
                 id="email"
+                ngModel
               />
             </div>
 
@@ -35,6 +51,8 @@
                 placeholder="Phone Number"
                 type="tel"
                 id="phone"
+                name="category"
+                ngModel
               />
             </div>
           </div>
@@ -46,11 +64,15 @@
               placeholder="Address"
               type="text"
               id="address"
+              name="address"
+              ngModel
             />
           </div>
-          
+
           <div>
-            <p>Total Amount : 4888</p>
+            <p>
+              Total Amount : <b> {{ totalPrice }} Tk </b>
+            </p>
             <p>Payment Method: <b> Pay on Delivery </b></p>
           </div>
 

@@ -57,11 +57,29 @@
             <li>
               <a
                 class="text-gray-700 cursor-pointer transition hover:text-gray-500/75"
-                routerLink="signUp"
+                routerLink="/signUp"
               >
                 seller
               </a>
             </li>
+            <li>
+              <a
+                class="text-gray-700 cursor-pointer transition hover:text-gray-500/75"
+                routerLink="/myOrder"
+              >
+                My Order
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="text-gray-700 text-md transition cursor-pointer hover:text-gray-500/75"
+                routerLink="/cart-page"
+              >
+                cart({{ cartItem }})
+              </a>
+            </li>
+
             <li>
               <a
                 class="text-gray-700 cursor-pointer transition hover:text-gray-500/75"
@@ -70,21 +88,13 @@
                 LogOut
               </a>
             </li>
+
             <li>
               <p
                 class="text-gray-700 font-bold text-lg cursor-pointer transition hover:text-gray-500/75"
               >
                 {{ userName | titlecase }}
               </p>
-            </li>
-
-            <li>
-              <a
-                class="text-gray-700 text-md transition cursor-pointer hover:text-gray-500/75"
-                routerLink="/cart-page"
-                >
-                cart({{ cartItem }})
-              </a>
             </li>
           </ul>
 
@@ -120,8 +130,6 @@
                 {{ sellName | titlecase }}
               </p>
             </li>
-
-            
           </ul>
         </nav>
       </div>

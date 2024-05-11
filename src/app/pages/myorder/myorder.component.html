@@ -1,0 +1,67 @@
+<section class="mt-8">
+  <div>
+    <p class="text-center uppercase text-4xl font-semibold my-8">My order</p>
+  </div>
+  <div class="overflow-x-auto container mx-auto border">
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+      <thead class="divide-y">
+        <tr>
+          <th
+            class="text-start whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+          >
+            Name
+          </th>
+          <th
+            class="text-start whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+          >
+            Email
+          </th>
+          <th
+            class="text-start whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+          >
+            Address
+          </th>
+          <th
+            class="text-start whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+          >
+            Contact
+          </th>
+          <th
+            class="text-start whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+          >
+            Price
+          </th>
+          <th class="text-start px-4 py-2">Action</th>
+        </tr>
+      </thead>
+
+      <tbody class="divide-y divide-gray-200">
+        <tr *ngFor="let item of orderData">
+          <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            {{ item.name }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            {{ item?.email }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            {{ item?.address }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            {{ item?.contact }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            {{ item?.totalPrice }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2">
+            <button
+              (click)="cancelOrder(item?.id)"
+              class="inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white hover:bg-red-600"
+            >
+              Cancel order
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

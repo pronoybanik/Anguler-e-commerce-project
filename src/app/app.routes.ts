@@ -11,6 +11,7 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { UserAuthComponent } from './pages/user-auth/user-auth.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
+import { MyorderComponent } from './pages/myorder/myorder.component';
 
 export const routes: Routes = [
     {
@@ -60,5 +61,9 @@ export const routes: Routes = [
     {
         path: 'checkout',
         component: CheckoutPageComponent,
+    },
+    {
+        path: 'myOrder',
+        component: MyorderComponent,
     },
 ];

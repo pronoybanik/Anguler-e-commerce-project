@@ -97,28 +97,6 @@
   ],
   "cart": [
     {
-      "id": "b63b",
-      "productName": "Huawei mobile WiFi 3s",
-      "price": 4050,
-      "category": "wifi",
-      "image": "https://www.ryans.com/storage/products/main/huawei-mobile-wifi-3s-150-mbps-3g4g-black-pocket-11676694388.webp",
-      "description": "Antenna (Type & Qty) - LTE/UMTS main and diversity antennas\nRouter Type - Portable\nBand - Single",
-      "quantity": 4,
-      "productId": "3d25",
-      "userId": "3dc4"
-    },
-    {
-      "id": "f13e",
-      "productName": "Huawei mobile WiFi 3s",
-      "price": 4050,
-      "category": "wifi",
-      "image": "https://www.ryans.com/storage/products/main/huawei-mobile-wifi-3s-150-mbps-3g4g-black-pocket-11676694388.webp",
-      "description": "Antenna (Type & Qty) - LTE/UMTS main and diversity antennas\nRouter Type - Portable\nBand - Single",
-      "quantity": 1,
-      "userId": "3dc4",
-      "productId": "3d25"
-    },
-    {
       "id": "a330",
       "productName": "iPhone 14 Pro Max",
       "price": 100000,
@@ -130,7 +108,7 @@
       "productId": "f11a"
     },
     {
-      "id": "4b17",
+      "id": "dd53",
       "productName": "Huawei mobile WiFi 3s",
       "price": 4050,
       "category": "wifi",
@@ -141,15 +119,46 @@
       "productId": "3d25"
     },
     {
-      "id": "692c",
-      "productName": "Ajazz AK820 ",
-      "price": 5000,
-      "category": "keyboard",
-      "image": "https://www.startech.com.bd/image/cache/catalog/keyboard/ajazz/ak820/ak820-03-228x228.webp",
-      "description": "81 Keys, Compact Layout\nSouth-Facing LED Orientation & 1.6M RGB Backlighting",
-      "quantity": 4,
+      "id": "3c9e",
+      "productName": "Huawei mobile WiFi 3s",
+      "price": 4050,
+      "category": "wifi",
+      "image": "https://www.ryans.com/storage/products/main/huawei-mobile-wifi-3s-150-mbps-3g4g-black-pocket-11676694388.webp",
+      "description": "Antenna (Type & Qty) - LTE/UMTS main and diversity antennas\nRouter Type - Portable\nBand - Single",
+      "quantity": 1,
       "userId": "33c0",
-      "productId": "f4a3"
+      "productId": "3d25"
+    },
+    {
+      "id": "0e32",
+      "productName": "iPhone 14 Pro Max",
+      "price": 100000,
+      "category": "mobile",
+      "image": "https://mcsolution.com.bd/wp-content/uploads/2022/08/iphone-14-pro-max-price-in-bangladesh-2022-MC-Solution-BD-scaled-600x726.webp",
+      "description": "Display 6.7 Inches\nProcessor Apple A16 Bionic (5 nm)\nOperating System iOS 16\nStorage 128GB / 256GB /512 GB / 1TB\nPrimary Camera 12 MP",
+      "quantity": 1,
+      "userId": "33c0",
+      "productId": "f11a"
+    }
+  ],
+  "orders": [
+    {
+      "id": "5512",
+      "name": "pronoy",
+      "email": "pronoybanik82@gmail.com",
+      "contact": "01252",
+      "address": "shohodebpur, feni",
+      "totalPrice": 22100,
+      "userId": "33c0"
+    },
+    {
+      "id": "13a8",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "contact": "00000",
+      "address": "Shodebpur",
+      "totalPrice": 114555,
+      "userId": "3dc4"
     }
   ]
 }

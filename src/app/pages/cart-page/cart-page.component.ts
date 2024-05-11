@@ -19,7 +19,8 @@ export class CartPageComponent {
     tax: 0,
     delivery: 0,
     total: 0
-  }
+  };
+  
   ngOnInit() {
     this.productService.currentCart().subscribe((result) => {
       if (result) {
