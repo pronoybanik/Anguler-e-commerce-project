@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { cart, priceSummary } from '../../Data-Type/data-type';
 import { NgFor } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
@@ -12,7 +12,9 @@ import { RouterLink } from '@angular/router';
 })
 export class CartPageComponent {
   productService = inject(ProductService);
-  cartData: undefined | cart[]
+  cartData: undefined | cart[];
+  router = inject(Router);
+
   priceSummary: priceSummary = {
     price: 0,
     discount: 0,
@@ -20,8 +22,19 @@ export class CartPageComponent {
     delivery: 0,
     total: 0
   };
-  
+
   ngOnInit() {
+    this.loadData()
+  };
+
+  removeToCart(id: string | undefined) {
+    id && this.productService.removeToCart(id)
+      .subscribe((result) => {
+        result && this.loadData();
+      })
+  };
+
+  loadData() {
     this.productService.currentCart().subscribe((result) => {
       if (result) {
         this.cartData = result;
@@ -36,7 +49,12 @@ export class CartPageComponent {
         this.priceSummary.tax = price / 5;
         this.priceSummary.delivery = 100;
         this.priceSummary.total = this.priceSummary.price - this.priceSummary.discount + this.priceSummary.tax + this.priceSummary.delivery;
+
+        if (!this.cartData.length) {
+          this.router.navigate(["/"])
+        }
       }
     })
-  }
+  };
+  
 }

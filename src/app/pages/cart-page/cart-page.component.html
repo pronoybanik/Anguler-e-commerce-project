@@ -47,7 +47,10 @@
                 />
               </form>
 
-              <button class="text-gray-600 transition hover:text-red-600">
+              <button
+                (click)="removeToCart(item?.id)"
+                class="text-gray-600 transition hover:text-red-600"
+              >
                 <span class="sr-only">Remove item</span>
 
                 <svg

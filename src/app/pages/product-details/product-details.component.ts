@@ -41,7 +41,6 @@ export class ProductDetailsComponent {
           this.productService.getCarList(userId);
           this.productService.cartIndex.subscribe((result) => {
             let item = result.filter((item: product) => this.productId === item?.productId)
-            console.log("item number", item);
             if (item.length) {
               this.cartData = item[0]
               this.removeCart = true;
@@ -90,7 +89,6 @@ export class ProductDetailsComponent {
     if (!localStorage.getItem("user_auth")) {
       this.productService.removeItemFormCart(this.productId);
     } else {
-      console.log(this.cartData);
       let user = localStorage.getItem("user_auth")
       let userId = user && JSON.parse(user).id
       this.cartData && this.productService.removeToCart(this.cartData.id).subscribe((result) => {

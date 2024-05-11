@@ -74,7 +74,7 @@
             <li>
               <a
                 class="text-gray-700 text-md transition cursor-pointer hover:text-gray-500/75"
-                routerLink="/cart-page"
+                [routerLink]="cartItem > 0 ? '/cart-page' : null"
               >
                 cart({{ cartItem }})
               </a>
@@ -136,7 +136,10 @@
 
       <!-- search bar section -->
       <div>
-        <div *ngIf="menuType === 'default'" class="relative">
+        <div
+          *ngIf="menuType === 'seller' || menuType === 'user'"
+          class="relative"
+        >
           <label for="Search" class="sr-only"> Search </label>
 
           <input
