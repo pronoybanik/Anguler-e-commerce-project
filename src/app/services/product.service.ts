@@ -105,4 +105,5 @@ export class ProductService {
   cancelOrder(id: string) {
     return this.httpClient.delete("https://anguler-e-commer-server.onrender.com/orders/" + id)
   }
-}
+};
+
