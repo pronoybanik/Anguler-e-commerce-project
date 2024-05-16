@@ -13,27 +13,27 @@ export class ProductService {
 
 
   addProduct(data: product) {
-    return this.httpClient.post('http://localhost:3000/products', data);
+    return this.httpClient.post('https://anguler-e-commer-server.onrender.com/products', data);
   };
 
   getProducts() {
-    return this.httpClient.get<product[]>('http://localhost:3000/products')
+    return this.httpClient.get<product[]>('https://anguler-e-commer-server.onrender.com/products')
   };
 
   deleteProduct(id: string) {
-    return this.httpClient.delete(`http://localhost:3000/products/${id}`)
+    return this.httpClient.delete(`https://anguler-e-commer-server.onrender.com/products/${id}`)
   };
 
   getProductsById(id: string) {
-    return this.httpClient.get<product>("http://localhost:3000/products/" + id);
+    return this.httpClient.get<product>("https://anguler-e-commer-server.onrender.com/products/" + id);
   };
 
   updateProduct(data: product) {
-    return this.httpClient.put(`http://localhost:3000/products/${data?.id}`, data)
+    return this.httpClient.put(`https://anguler-e-commer-server.onrender.com/products/${data?.id}`, data)
   };
 
   searchProduct(query: string) {
-    return this.httpClient.get(`http://localhost:3000/products?category=${query}`)
+    return this.httpClient.get(`https://anguler-e-commer-server.onrender.com/products?category=${query}`)
   };
 
   localStorageData(data: product) {
@@ -61,11 +61,11 @@ export class ProductService {
   };
 
   addToCart(cartData: cart) {
-    return this.httpClient.post('http://localhost:3000/cart', cartData);
+    return this.httpClient.post('https://anguler-e-commer-server.onrender.com/cart', cartData);
   };
 
   getCarList(userId: string) {
-    return this.httpClient.get<product[]>('http://localhost:3000/cart?userId=' + userId, { observe: "response" }).subscribe((result) => {
+    return this.httpClient.get<product[]>('https://anguler-e-commer-server.onrender.com/cart?userId=' + userId, { observe: "response" }).subscribe((result) => {
       if (result && result.body) {
         this.cartIndex.emit(result.body)
       }
@@ -73,27 +73,27 @@ export class ProductService {
   };
 
   removeToCart(id: string) {
-    return this.httpClient.delete("http://localhost:3000/cart/" + id)
+    return this.httpClient.delete("https://anguler-e-commer-server.onrender.com/cart/" + id)
   };
 
   currentCart() {
     let userStore = localStorage.getItem('user_auth');
     let userData = userStore && JSON.parse(userStore);
-    return this.httpClient.get<cart[]>("http://localhost:3000/cart?userId=" + userData?.id)
+    return this.httpClient.get<cart[]>("https://anguler-e-commer-server.onrender.com/cart?userId=" + userData?.id)
   }
 
   orderSave(data: order) {
-    return this.httpClient.post("http://localhost:3000/orders", data)
+    return this.httpClient.post("https://anguler-e-commer-server.onrender.com/orders", data)
   }
 
   orderList() {
     let userStore = localStorage.getItem('user_auth');
     let userData = userStore && JSON.parse(userStore);
-    return this.httpClient.get<order[]>(`http://localhost:3000/orders?userId=${userData?.id}`)
+    return this.httpClient.get<order[]>(`https://anguler-e-commer-server.onrender.com/orders?userId=${userData?.id}`)
   }
 
   deleteCartItem(cartId: string) {
-    return this.httpClient.delete("http://localhost:3000/cart/" + cartId, {
+    return this.httpClient.delete("https://anguler-e-commer-server.onrender.com/cart/" + cartId, {
       observe: "response"
     }).subscribe((result) => {
       if (result) {
@@ -103,6 +103,6 @@ export class ProductService {
   };
 
   cancelOrder(id: string) {
-    return this.httpClient.delete("http://localhost:3000/orders/" + id)
+    return this.httpClient.delete("https://anguler-e-commer-server.onrender.com/orders/" + id)
   }
 }

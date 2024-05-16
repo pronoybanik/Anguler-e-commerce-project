@@ -17,7 +17,7 @@ export class SellService {
   constructor() { }
 
   sellerSignUp(data: SignUp) {
-    this.httpClient.post("http://localhost:3000/signUp",
+    this.httpClient.post("https://anguler-e-commer-server.onrender.com/signUp",
       data,
       { observe: "response" }).subscribe(result => {
         if (result) {
@@ -37,7 +37,7 @@ export class SellService {
   }
 
   sellerLogIn(data: SignIn) {
-    this.httpClient.get(`http://localhost:3000/signUp?email=${data.email}&password=${data.password}`,
+    this.httpClient.get(`https://anguler-e-commer-server.onrender.com/signUp?email=${data.email}&password=${data.password}`,
       { observe: "response" }).subscribe((result: any) => {
         if (result && result.body && result.body.length) {
           alert("Login successful")

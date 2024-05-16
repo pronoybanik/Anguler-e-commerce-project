@@ -16,7 +16,7 @@ export class UserService {
   constructor() { }
 
   userSignUp(data: SignUp) {
-    this.httpClient.post("http://localhost:3000/user",
+    this.httpClient.post("https://anguler-e-commer-server.onrender.com/user",
       data,
       { observe: "response" }).subscribe(result => {
         if (result) {
@@ -30,7 +30,7 @@ export class UserService {
 
 
   userLogIn(data: SignIn) {
-    this.httpClient.get<SignUp[]>(`http://localhost:3000/user?email=${data.email}&password=${data.password}`,
+    this.httpClient.get<SignUp[]>(`https://anguler-e-commer-server.onrender.com/user?email=${data.email}&password=${data.password}`,
       { observe: "response" }).subscribe((result: any) => {
         if (result && result.body && result.body.length) {
           this.isLoginError.emit(false)
